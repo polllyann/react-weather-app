@@ -1,31 +1,115 @@
+:root {
+  --main-color: #000;
+  --second-color: #fff;
+  --third-color: #C2A9AC;
+  --main-font: "Roboto Slab", serif;
+}
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-
+  background-image: url(./background2.jpg);
+  background-position:center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 1300px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }
+input[type=search]::-ms-clear {  display: none; width : 0; height: 0; }
+input[type=search]::-ms-reveal {  display: none; width : 0; height: 0; }
 
 .App {
-  font-family: sans-serif;
   text-align: center;
 }
 
+.bodyClass {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 70px;
+  border-radius: 40px;
+  max-width: 600px;
+  display: block;
+  margin: 0 auto;
+}
+
+.mB {
+margin-top: 50px;
+}
+
+.tempClass {
+  font-size: 45px;
+  font-weight: 900;
+}
 .listClass {
   text-decoration: none;
   list-style: none;
   padding-left: 0;
+  font-family: var(--main-font);
+  color: var(--main-color);
+  max-width: 600px;
+  display: block;
+  margin: 0 auto;
 }
 
+.weatherInfo {
+  font-size: 13px;
+  line-height: 14px;
+}
+
+.weatherDescription {
+  text-transform: capitalize;
+}
+
+.cityName {
+  font-weight: 900;
+  font-size: 40px;
+  font-family: var(--main-font);
+  color: var(--main-color);
+}
+
+.formClass {
+ margin-top: 15px;
+  margin-bottom: 30px;
+  color: var(--main-color);
+}
+
+.searchBox {
+border: 0.5px solid var(--main-color);
+font-family: var(--main-font);
+color: var(--main-color);
+background: rgba(0, 0, 0, 0.02);
+padding-left: 60px;
+padding-right: 60px;
+text-align: center;
+}
+
+.searchButton {
+background: rgba(0, 0, 0, 0.02);
+font-family: var(--main-font);
+border: 0.5px solid var(--main-color);
+color: var(--main-color);
+font-weight: 900;
+background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
+}
+
+.searchButton:hover {
+  cursor: pointer;
+  background-color: var(--third-color);
+}
 .codeLink {
   text-align: center;
+  font-family: var(--main-font);
+  color: var(--main-color);
 }
+
+a {
+  color: var(--main-color);
+}
+
+a:hover {
+  cursor: pointer;
+  color: var(--third-color);
+}
+
 

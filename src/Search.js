@@ -10,6 +10,7 @@ export default function Search() {
   function displayWeather(response) {
     setLoaded(true);
     changeWeather({
+      city: response.data.name,
       temperature: response.data.main.temp,
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
@@ -30,32 +31,44 @@ export default function Search() {
   }
 
   let form = (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="formClass" >
       <input
         type="search"
         placeholder="Enter a city..."
-        onChange={updateCity}
+        className="searchBox"
+        onChange={updateCity} 
       />
-      <input type="submit" value="Search" />
+      <input type="submit" value="   " className="searchButton"/>
     </form>
   );
 
   if (loaded) {
     return (
-      <div>
+      <div className="mB">
+      <div className="bodyClass">
         {form}
         <ul className="listClass">
-          <li>Temperature: {Math.round(weather.temperature)}°C</li>
-          <li>Wind: {Math.round(weather.wind)}km/h</li>
-          <li>Humidity: {Math.round(weather.humidity)}%</li>
-          <li>{weather.description}</li>
-          <li>
-            <img src={weather.icon} alt="" />{" "}
+        <div className="row">
+    <div className="col-md-6">
+          <li className="cityName">{weather.city}</li>
+        <li className="imageWeather">
+            <img src={weather.icon} alt="" width="70px"/>
           </li>
+          </div>
+    <div className="col-md-6">
+          <li className="tempClass">{Math.round(weather.temperature)}°C</li>
+          <div className="weatherInfo">
+            <li>Wind: {Math.round(weather.wind)}km/h</li>
+          <li>Humidity: {Math.round(weather.humidity)}%</li>
+          <li className="weatherDescription">{weather.description}</li>
+         </div>
+          </div>
+          </div>
         </ul>
       </div>
+      </div>
     );
-  } else {
-    return form;
-  }
-}
+  } else { return window.onload = function homeCity() {let homecity = `Kyiv`;
+  let apiKey = `a886363dc826c8ebe5f8a1c7e752c026`;
+  let url = `https://api.openweathermap.org/data/2.5/weather?q=${homecity}&appid=${apiKey}&units=metric`;
+  axios.get(url).then(displayWeather);} }}
